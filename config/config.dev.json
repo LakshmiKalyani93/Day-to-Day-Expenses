@@ -1,0 +1,24 @@
+{
+  "logger": {
+    "MAXFILES": 10,
+    "MAXSIZE": 5242880,
+    "LOGDIR": "logs",
+    "LOGFILE": "node-expenses.log",
+    "DATEPATTERN": ".yyyy-MM-dd",
+    "LEVEL": "info",
+    "offset": 330
+  },
+  "elastic": {
+    "hosts": [
+      {
+        "host": "10.0.0.53",
+        "port": 80,
+        "auth": "elasticsearch:zee9OhK5ahthole"
+      }
+    ]
+  },
+  "mailer": {
+    "from": "kidwainagarcommunity@gmail.com",
+    "to": "kalyanikolimali93@gmail.com"
+  }
+}

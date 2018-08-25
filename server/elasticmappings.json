@@ -1,0 +1,199 @@
+{
+    "Income": {
+        "created": {
+            "type": "date"
+        },
+        "lastUpdated": {
+            "type": "date"
+        },
+        "id": {
+            "type": "keyword",
+            "index": true
+        },
+        "title": {
+            "type": "keyword",
+            "index": true
+        },
+        "amount": {
+            "type": "long"
+        },
+        "category": {
+            "type": "keyword",
+            "index": true
+        },
+        "logTime": {
+            "type": "date"
+        }
+    },
+    "Expense": {
+        "created": {
+            "type": "date"
+        },
+        "lastUpdated": {
+            "type": "date"
+        },
+        "id": {
+            "type": "keyword",
+            "index": true
+        },
+        "title": {
+            "type": "keyword",
+            "index": true
+        },
+        "amount": {
+            "type": "long"
+        },
+        "category": {
+            "type": "keyword",
+            "index": true
+        },
+        "logTime": {
+            "type": "date"
+        }
+    },
+    "Category": {
+        "created": {
+            "type": "date"
+        },
+        "lastUpdated": {
+            "type": "date"
+        },
+        "id": {
+            "type": "keyword",
+            "index": true
+        },
+        "title": {
+            "type": "keyword",
+            "index": true
+        },
+        "description": {
+            "type": "keyword"
+        },
+        "category": {
+            "type": "keyword",
+            "index": true
+        }
+    },
+    "User": {
+        "email": {
+            "type": "keyword",
+            "index": true
+        },
+        "password": {
+            "type": "keyword"
+        },
+        "username": {
+            "type": "keyword",
+            "index": true
+        },
+        "phoneNumber": {
+            "type": "keyword",
+            "index": true
+        },
+        "created": {
+            "type": "date"
+        },
+        "lastUpdated": {
+            "type": "date"
+        },
+        "id": {
+            "type": "keyword",
+            "index": true
+        }
+    },
+    "Role": {
+        "name": {
+            "type": "keyword",
+            "index": true
+        },
+        "created": {
+            "type": "date"
+        },
+        "lastUpdated": {
+            "type": "date"
+        }
+    },
+    "RoleMapping": {
+        "id": {
+            "type": "keyword",
+            "index": true
+        },
+        "principalType": {
+            "type": "keyword",
+            "index": true
+        },
+        "principalId": {
+            "type": "keyword",
+            "index": true
+        },
+        "roleId": {
+            "type": "keyword",
+            "index": true
+        }
+    },
+    "AccessToken": {
+        "id": {
+            "type": "keyword",
+            "index": true
+        },
+        "ttl": {
+            "type": "long"
+        },
+        "scopes": {
+            "type": "keyword"
+        },
+        "created": {
+            "type": "keyword"
+        }
+    },
+    "ACL": {
+        "model": {
+            "type": "keyword"
+        },
+        "property": {
+            "type": "keyword"
+        },
+        "accessType": {
+            "type": "keyword"
+        },
+        "permission": {
+            "type": "keyword"
+        },
+        "principalType": {
+            "type": "keyword"
+        },
+        "principalId": {
+            "type": "keyword"
+        },
+        "id": {
+            "type": "long"
+        }
+    },
+    "LogModel": {
+        "message": {
+            "type": "keyword",
+            "index": true
+        },
+        "data": {
+            "type": "nested"
+        },
+        "model": {
+            "type": "keyword",
+            "index": true
+        },
+        "method": {
+            "type": "keyword",
+            "index": true
+        },
+        "created": {
+            "type": "date"
+        },
+        "lastUpdated": {
+            "type": "date"
+        },
+        "id": {
+            "type": "keyword",
+            "index": true
+        }
+    }
+}

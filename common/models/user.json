@@ -1,0 +1,105 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "caseSensitiveEmail": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "replaceOnPUT": false,
+  "hidden": [
+    "password"
+  ],
+  "properties": {
+    "username": {
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      }
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      }
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "incomes": {
+      "type": "hasMany",
+      "model": "Income",
+      "foreignKey": ""
+    },
+    "expenses": {
+      "type": "hasMany",
+      "model": "Expense",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": [
+        "login",
+        "logout",
+        "createUser"
+      ]
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "changePassword"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": [
+        "findById",
+        "count",
+        "patchAttributes",
+        "deleteById",
+        "__updateById__incomes",
+        "__updateById__expenses",
+        "__create__incomes",
+        "__create__expenses",
+        "__get__incomes",
+        "__get__expenses",
+        "__count__incomes",
+        "__count__expenses",
+        "__destroyById__incomes",
+        "__destroyById__expenses"
+      ]
+    }
+  ],
+  "methods": {}
+}

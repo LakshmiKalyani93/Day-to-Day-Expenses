@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "exp_ds_access_token",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "exp_ds_acl",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "exp_ds_roleMapping",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "exp_ds_role",
+    "public": false
+  },
+  "Income": {
+    "dataSource": "exp_ds_income",
+    "public": false
+  },
+  "Expense": {
+    "dataSource": "exp_ds_expense",
+    "public": false
+  },
+  "Category": {
+    "dataSource": "exp_ds_category",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "create": true,
+          "find": true,
+          "findById": true,
+          "deleteById": true,
+          "prototype.patchAttributes": true,
+          "count": true
+        }
+      }
+    }
+  },
+  "user": {
+    "dataSource": "exp_ds_user",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "login": true,
+          "count": true,
+          "logout": true,
+          "findById": true,
+          "deleteById": true,
+          "createUser": true,
+          "changePassword": true,
+          "prototype.patchAttributes": true,
+          "prototype.__create__incomes": true,
+          "prototype.__create__expenses": true,
+          "prototype.__get__incomes": true,
+          "prototype.__get__expenses": true,
+          "prototype.__updateById__incomes": true,
+          "prototype.__updateById__expenses": true,
+          "prototype.__count__expenses": true,
+          "prototype.__count__incomes": true,
+          "prototype.__destroyById__incomes": true,
+          "prototype.__destroyById__expenses": true
+        }
+      }
+    }
+  },
+  "LogModel": {
+    "dataSource": "exp_ds_logmodel",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true
+        }
+      }
+    }
+  }
+}

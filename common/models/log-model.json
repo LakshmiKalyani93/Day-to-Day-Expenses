@@ -1,0 +1,33 @@
+{
+  "name": "LogModel",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "type": "object",
+      "required": true
+    },
+    "model": {
+      "type": "string",
+      "required": true
+    },
+    "method": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
